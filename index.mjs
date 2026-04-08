@@ -1,5 +1,7 @@
 import express from 'express';
 import mysql from 'mysql2/promise';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
@@ -14,7 +16,7 @@ const conn = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
-    database: process.end.DB_NAME,
+    database: process.env.DB_NAME,
     connectionLimit: 10,
     waitForConnections: true
 });
