@@ -11,10 +11,10 @@ app.use(express.urlencoded({extended:true}));
 
 //setting up database connection pool
 const conn = mysql.createPool({
-    host: "x71wqc4m22j8e3ql.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    user: "gg2olaogq41v2uqx",
-    password: "b9y6mdtq609484nd",
-    database: "udtlzfl0812yhyiv",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.end.DB_NAME,
     connectionLimit: 10,
     waitForConnections: true
 });
